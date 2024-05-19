@@ -1,0 +1,276 @@
+---
+title: "DataBender - EMU415 Final Project"
+format: html
+fontcolor: white
+editor: visual
+---
+
+<style>
+  body {
+  background-image: url("https://i.gifer.com/76YS.gif");
+  background-size: cover;
+}
+
+</style>
+
+
+<span style="color:cyan;">**DataBender Team**
+
+-    İdil Ekin Akpınar – 21988548
+
+-    Beyza Nur Hanik – 2200469032
+
+-    Eren Seis – 2210469063
+
+### <span style="color:cyan;">**Project Overview**</span>
+
+ First of all, as a group, we have seen and observed the setbacks happening through the course selection dates. To ease the students’ burden in this topic, we came up with the idea of a database that consists the needed information for the courses. This needed information covers the resources, course ratings, and comments that are made about the course, and more.
+
+ Furthermore, we have entity classes, such as: users, comments, resources, rating, courses, and department. All have their attributes to successfully define their functions. There are also different relationship types between these entity classes. These types differentiates the connections such as mandatory, one-to-many, or many-to-many, etc. The model of the database is more elaborately shown in Figure 1.
+
+ The scope of this project is firstly determined as our department’s courses, however, since we have seen the potential of the project, which makes it available for every department in the university, it can be applied for every course given in the university.
+
+ The objectives of this project can be mentioned as the convenience for the course selection weeks, the helpfulness for the students that may wonder about the courses, creating a conception for the courses that may be somewhat unknown.
+
+ The function of this project will serve the students as the project will benefit their work load. The students will have more enhanced knowledge about the courses and what to select. They will also be able to see the resources that may be valuable for their studies.
+
+### <span style="color:cyan;">**Design Documentation**
+
+ The entities and their attributes are listed below. The primary key of all entities are the ones that is listed firstly below the entity.
+
+<span style="color:cyan;">**users**
+
+-    user_id (primary key)
+
+-    user_name
+
+-    email
+
+-    role
+
+<span style="color:cyan;">**comments**
+
+-    comment_id (primary key)
+
+-    com_text
+
+-    com_date
+
+-    user_name (foreign key)
+
+-    course_id (foreign key)
+
+<span style="color:cyan;">**resources**
+
+-    resource_id (primary key)
+
+-    resource_name
+
+-    resource_type
+
+-    resource_url
+
+-    user_name (foreign key)
+
+-    course_id (foreign key)
+
+<span style="color:cyan;">**rating**
+
+-    rate_id (primary key)
+
+-    rate
+
+-    user_name (foreign key)
+
+-    course_id (foreign key)
+
+<span style="color:cyan;">**courses**
+
+-    course_id (primary key)
+
+-    course_name
+
+-    course_aim
+
+-    course_type
+
+-    department_id (foreign key)
+
+<span style="color:cyan;">**department**
+
+-    department_id (primary key)
+
+-    department_name
+
+<span style="color:cyan;">**semester_year** (this is for users and courses relationship)
+
+-    semester_year
+
+-    user_name (foreign key)
+
+-    course_id (foreign key)
+
+<span style="color:cyan;">---
+
+[Use this link to reach the ER Diagram.](https://i.hizliresim.com/ckqbb3l.png)
+
+<span style="color:cyan;">---
+
+ user_name| email| role
+-----|-----|-----:
+ ShadowNinja|john.doe@example.com|student
+TechGuru|alice.smith@email.com|student
+CyberWizard|bobjohnson@gmail.com|student
+PixelPirate|emily.brown@example.org|student
+CodeMaster|chrisw@example.com|student
+MusicLover|sjones@email.com|student
+DataWhisperer|mdavis@example.org|graduate
+SkySurfer|jwilson@gmail.com|graduate
+CryptoGeek|david.martinez@example.com|graduate
+StarGazer|j.taylor@email.com|student
+DreamCatcher|randerson@example.org|graduate
+GigaByte|amanda.thomas@example.com|student
+ByteBandit|kevin.lee@email.com|graduate
+TechSavvy|laura.rodriguez@example.org|graduate
+ElectronJunkie|jwhite@example.com|student
+InfiniteLoop|rachelmiller@email.com|student
+BinaryNinja|mattc@example.org|student
+PixelPusher|s.young@example.com|student
+TechNerd|danielg@email.com|student
+NeonNinja|melissa.hernandez@example.org|student
+JupiterJockey|nking@example.com|student
+GalacticGuru|erica.lopez@email.com|graduate
+CyberPioneer|bscott@example.org|graduate
+SpaceInvader|hannahg@example.com|graduate
+CodeCrusader|jwright@email.com|graduate
+DigitalDynamo|kelly.martinez@example.org|student
+DataDiva|steven.hill@example.com|student
+ByteBuster|o.adams@email.com|student
+TechWhiz|pnguyen@example.org|student
+BitBender|rperez@example.com|student
+PixelProwler|joshk@email.com|student
+QuantumQuasar|v.nguyen@example.org|student
+ByteBlaster|b.evans@example.com|student
+CyberJester|d.turner@email.com|student
+BinaryBard|gdiaz@example.org|graduate
+NeonNebula|kwood@example.com|graduate
+CircuitChampion|tim.thomas@email.com|graduate
+PixelProdigy|madison.garcia@example.org|graduate
+DigitalDaredevil|jharris@example.com|graduate
+DataDemon|samantha.mitchell@email.com|student
+LogicLord|kroberts@example.org|student
+TechnoTitan|c.walker@example.com|student
+ByteBoss|jperez@email.com|student
+TechTrooper|k.hall@example.org|graduate
+
+<span style="color:cyan;">---
+
+rate|user_name|course_id|
+-----|-----|-----:
+5|ShadowNinja|EMÜ324|
+4|MusicLover|EMÜ324|
+5|DataWhisperer|EMÜ324|
+3|InfiniteLoop|EMÜ324|
+3|PixelPusher|EMÜ324|
+4|JupiterJockey|EMÜ324|
+4|MusicLover|EMÜ332|
+4|PixelPusher|EMÜ332|
+4|DataWhisperer|EMÜ332|
+3|CryptoGeek|EMÜ332|
+2|SpaceInvader|EMÜ332|
+1|BitBender|EMÜ332|
+5|NeonNebula|EMÜ332|
+5|CircuitChampion|EMÜ332|
+4|StarGazer|EMÜ332|
+4|JupiterJockey|EMÜ332|
+2|DigitalDaredevil|EMÜ332|
+3|DataDiva|EMÜ332|
+5|MusicLover|EMÜ415|
+5|ShadowNinja|EMÜ415|
+5|DataWhisperer|EMÜ415|
+5|SkySurfer|EMÜ415|
+5|CryptoGeek|EMÜ415|
+4|StarGazer|EMÜ415|
+5|GigaByte|EMÜ415|
+5|TechSavvy|EMÜ415|
+4|InfiniteLoop|EMÜ415|
+5|PixelPusher|EMÜ415|
+3|NeonNinja|EMÜ415|
+3|JupiterJockey|EMÜ415|
+2|SpaceInvader|EMÜ415|
+3|BitBender|EMÜ415|
+4|ByteBlaster|EMÜ415|
+4|NeonNebula|EMÜ415|
+5|DataDiva|EMÜ415|
+5|CircuitChampion|EMÜ415|
+5|DigitalDaredevil|EMÜ415|
+4|DataDemon|EMÜ415|
+4|ByteBlaster|EMÜ444|
+4|DataDemon|EMÜ444|
+4|NeonNebula|EMÜ444|
+4|CircuitChampion|EMÜ444|
+4|DigitalDaredevil|EMÜ444|
+3|ShadowNinja|FİZ137|
+2|SkySurfer|FİZ137|
+3|TechSavvy|FİZ137|
+2|NeonNinja|FİZ137|
+5|StarGazer|FİZ137|
+4|SpaceInvader|FİZ137|
+1|ShadowNinja|MAT123|
+2|SkySurfer|MAT123|
+2|CryptoGeek|MAT123|
+5|GigaByte|MAT123|
+2|InfiniteLoop|MAT123|
+3|SpaceInvader|MAT123|
+2|BitBender|MAT123|
+4|TechSavvy|MAT123|
+2|ShadowNinja|MAT124|
+4|GigaByte|MAT124|
+5|NeonNinja|MAT124|
+4|SpaceInvader|MAT124|
+4|SkySurfer|MAT124|
+4|CryptoGeek|MAT124|
+5|JupiterJockey|MAT124|
+2|BitBender|MAT124|
+3|NeonNebula|MAT124|
+4|CircuitChampion|MAT124|
+2|DigitalDaredevil|MAT124|
+3|DataDemon|MAT124|
+2|ByteBoss|MAT124|
+
+### <span style="color:cyan;">**SQL Implementation**
+
+ First of all, after the data was collected and prepared with the help of Hacettepe University or ChatGPT, we defined the tables in SQL and transferred them to SQL with the import wizard. We can see sample table definitions below.
+
+ After the entire schema was prepared, we started writing SQL queries.
+
+<span style="color:cyan;">---
+
+ /*this gives us users who gave more than 3 rates*/
+
+  SELECT users.user_name, COUNT(ratings.rate) AS NumberOfRatings
+
+  FROM (ratings
+INNER JOIN users ON ratings.user_name = users.user_name)
+
+  GROUP BY user_name
+
+  HAVING COUNT(ratings.rate)>3;
+
+<span style="color:cyan;">---
+
+ /*this row gives us min,max,avg and total given rates for EMÜ415*/
+
+ SELECT
+
+ MIN(rate) AS min_rate,
+
+ MAX(rate) AS max_rate,
+
+ AVG(rate) AS avg_rate,
+
+ COUNT(*) AS total_rate
+
+ FROM ratings where course_id = 'EMÜ415';
+
+<span style="color:cyan;">---
